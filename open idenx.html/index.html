@@ -1,0 +1,211 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cameron CSS Showcase</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+ <style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+
+
+<style>*
+body{font-family:Helvetica,sans-serif;}
+@media screen and (max-width:400px){
+}
+</style>
+
+<style>
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+</style>
+
+<style>
+.pic {
+  display: flex;
+  justify-content: space-around;
+}
+</style> 
+<style>
+  .flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+</style>
+<style>
+#h3 {
+  font-weight: 900;
+}
+</style>
+<style>
+p {
+  font-weight: 500;
+}
+</style>
+<style>
+   #code1{
+    color: white;
+  }
+  #code2{
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+ 
+</style>
+
+</head>
+
+
+<body>
+
+ <header class="header-main">
+  <p id="h3"><u><bold><big>-Dark Mode CSS Showcase-</big></bold></u></p></h3>
+  </header>
+
+<div class="flex-container">
+  <figure class="figure">
+<div class="absolute-position2">
+
+    </div>
+    <h1>What Is Dark Mode?</h1>
+    <p>Dark mode, also known as: light-on-dark color scheme, dark theme, or night mode, is a relatively new feature that is being added to many popular websites. This surge in implementation can be seen mainly on social media platforms such as youtube and instagram (some newer ones). Dark Mode provides the user with an alternative color theme while they navigate around the site/app. 
+      <br>
+The feature began with the idea of conserving battery life in mind. It’s origins are deeply rooted in mobile devices which is evident to this day as apps that already had a dark mode feature are slowly rolling them out for the web version as well. Recently, Safari Technology Preview 68 released <code id="code1">prefers-color-scheme</code> which allows for the website to be able to detect weather or not the user has dark mode enabled through a web query. 
+
+</p>
+ 
+</div>
+  </figure>
+
+<div class="flex-container">
+     <figure class="col1">
+  <figcaption>
+    <h1>More Than Just Dark Colors</h1><p>As mentioned previously, there are multiple elements and features to dark mode not just a different color scheme. Many people use dark mode to prevent eye pains, especially when having to look at screens late at night. Because of this, when thought as an accessibility item, new components can be added to the feature that go beyond just a dark background with white text. 
+<br>
+
+  People have been brainstorming for some years now and have come up with multiple new features that adds so much more to dark mode. One of these being changes with how images appear on a users page. Using media queries, the programmer is able to set images to blend in with the background if dark mode is enabled. New elements can be so small such as link colors and link hovers being changed when the user switches to dark mode, but still so useful in easing the user’s eyes. Adaptive brightness is also a very useful feature that implements dark mode to help reduce eye strain.
+
+
+</p></figcaption>
+</figure>
+</div>
+
+<div class="flex-container">
+<figure class="col2">
+  <div class="pic">
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/200x200.jpg" alt="" />
+  <img src="https://i.imgur.com/ot8cJpG.jpg" alt="" />
+  </div>
+  <figcaption> <h1>Blended Images</h1><p>As mentioned above, we can use media queries to make dark mode assist in accessibility issues that users may have. One of these ways is by making the images not as bright on a web page if the user has dark mode enabled. This is shown in the code below:
+    <hr>
+<pre>
+<code id="code2">
+@media (prefers-color-scheme: dark) {
+  img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
+}
+</code>
+</pre>
+<hr>
+The <code id="code1">prefers-color-scheme</code> element is what checks to see if the user has dark mode enabled on their computer and then goes from there with whether or not the images should be dimmed. I found this very interesting and it was fun to play around with it as I love using dark mode myself.
+  </p></figcaption>
+</figure>
+
+
+<div class="container">
+<figure class="break">
+  <div class="pic">
+  <img src="https://i.imgur.com/ZwWi7MV.png" alt="" />
+  <img src="https://i.imgur.com/RTFJOpC.png" alt="" />
+  </div>
+
+
+  <figcaption>
+    <h1>What Should You Keep in Mind When Building Dark Mode Layouts?</h1><p><i>Above are some layouts that I made to show the differences when building a dark mode layout</i>
+<br>
+<hr>
+First thing you should keep in mind is that there is more to this mode than just a dark background. It is suggested that multiple shades of grey should be used throughout the site instead of just black, this provides more depth and creates a more appealing environment to the user. 
+<br>
+<hr>
+Next are accents. Usually dark themes have little to no color accents, this is because when building it you don’t want to take space/attention away from the dark areas. 
+<br>
+<hr>
+A balance must be met across the page where it’s dark but not so dark that people with low vision or other disabilities can’t see it. To achieve this you must make your colors and shades provide enough contrast across the webpage.
+<br>
+<hr>
+Last is conserving energy, which is especially important with devices with OLED screens. To achieve this limit the use of light pixels in the design. 
+<hr>
+
+
+</p></figcaption>
+    </div>
+    </figure>
+
+
+
+<div class="absolute-position">
+<button id="button1" onclick="myFunction()">Toggle Dark/Light Mode</button>
+</figure>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+
+
+  
+
+
+
+
+
+  
+  
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
